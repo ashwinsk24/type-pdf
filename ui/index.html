@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TypePDF — Markdown to PDF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="app">
+    <header id="topbar">
+      <div id="topbar-left">
+        <span id="logo">TypePDF</span>
+      </div>
+      <div id="topbar-controls">
+        <div class="ctrl-group">
+          <label>Page Size</label>
+          <select id="ctrl-page-size">
+            <option value="a4">A4</option>
+            <option value="letter">Letter</option>
+          </select>
+        </div>
+        <div class="ctrl-group">
+          <label>Margins</label>
+          <select id="ctrl-margins">
+            <option value="25">Normal</option>
+            <option value="15">Narrow</option>
+            <option value="35">Wide</option>
+          </select>
+        </div>
+        <div class="ctrl-group">
+          <label>Font Size</label>
+          <select id="ctrl-font-size">
+            <option value="10">10pt</option>
+            <option value="11" selected>11pt</option>
+            <option value="12">12pt</option>
+          </select>
+        </div>
+        <div class="ctrl-group">
+          <label>PDF Theme</label>
+          <select id="ctrl-theme">
+            <option value="light">Light</option>
+            <option value="draft">Draft</option>
+          </select>
+        </div>
+        <div class="ctrl-group">
+          <label>UI Theme</label>
+          <select id="ctrl-ui-theme">
+            <option value="system">System</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
+      </div>
+      <div id="topbar-right">
+        <button id="btn-download" disabled>Download PDF</button>
+      </div>
+    </header>
+    <div id="error-bar" class="error-bar" style="display:none"></div>
+    <main id="main">
+      <section id="editor-pane">
+        <div id="editor"></div>
+      </section>
+      <section id="preview-pane">
+        <div id="preview-loading" class="loading-overlay">
+          <div class="spinner"></div>
+          <p>Loading WASM engine...</p>
+        </div>
+        <div id="preview-msg" class="preview-msg" style="display:none"></div>
+        <iframe id="preview" name="preview"></iframe>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
