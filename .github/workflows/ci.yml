@@ -1,4 +1,4 @@
-name: CI Regression Tests
+name: CI Regression Checks
 
 on:
   push:
