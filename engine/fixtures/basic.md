@@ -29,7 +29,6 @@ function hello() {
 ```
 
 Here is an external HTTP image:
-
-![Placeholder](https://placehold.co/600x400/EEE/31343C.png)
+![Placeholder](test-image.png)
 
 ### Heading with **bold inline** and *italic inline*
